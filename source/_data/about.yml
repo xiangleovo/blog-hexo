@@ -30,25 +30,25 @@ skills: # 根据需求添加
   subtitle: 开启创造力
   tags:
     - title: HTML
-      icon: "https://image.qqe4.com/Piclist/20250419/JS.png"
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#e9572b"
     - title: Javascript
-      icon: https://image.qqe4.com/Piclist/20250419/JS.png
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#f7cb4f"
     - title: Kotlin
-      icon: https://image.qqe4.com/Piclist/20250419/kotlin-logo.svg
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#ffffff"
     - title: WebPack
-      icon: https://image.qqe4.com/Piclist/20250419/webpack.png
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#2e3a41"
     - title: Git
-      icon: https://image.qqe4.com/Piclist/20250419/git.png
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#df5b40"
     - title: Docker
-      icon: https://image.qqe4.com/Piclist/20250419/webpack.png
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#57b6e6"
     - title: Visual Studio
-      icon: https://image.qqe4.com/Piclist/20250419/vs-logo.svg
+      icon: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#ffffff"
 
 careers:
@@ -65,7 +65,7 @@ personalities:
   title: 物流师
   color: "#56a178"
   type: ISTJ-A
-  image: https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.svg
+  image: https://image.qqe4.com/Piclist/20250419185435252.svg
   link: https://www.16personalities.com/
   linkText: 16personalities
   typeLink: https://www.16personalities.com/ch/esfj-人格
@@ -139,7 +139,7 @@ likes:
 tj: # 统计
   provider: # 值为 51la（51la网站统计）或 baidu（百度统计）
   url: https://v6-widget.51.la/v6/3F15j2vtdTo7PPcN/quote.js # 需要到51la官网注册自行获取 or 自行搭建 Heo 的 百度统计项目，填写访问地址即可
-  img: https://7.isyangs.cn/1/65eb2e9109826-1.png # 背景
+  img: https://image.qqe4.com/Piclist/20250419221659339.jpg # 背景
 
 oneself: # 按需填写
   location: 中国，安徽省 # 所在位置
