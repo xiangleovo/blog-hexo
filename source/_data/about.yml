@@ -16,7 +16,7 @@ title: 关于本站
 contentinfo: # 顶部个人信息展示
   sup: 你好，很高兴认识你👋
   name: 我叫OvO # 名称
-  title: 是一名软件工程师、独立开发者、博主 # 介绍
+  title: 是一名独立开发者、博主 # 介绍
   tip: 追求
   slogan: 源于<br>热爱而去创造
   mask:
@@ -30,7 +30,7 @@ skills: # 根据需求添加
   subtitle: 开启创造力
   tags:
     - title: HTML
-      icon: https://image.qqe4.com/Piclist/20250419/HTML.png
+      icon: "https://image.qqe4.com/Piclist/20250419/JS.png"
       color: "#e9572b"
     - title: Javascript
       icon: https://image.qqe4.com/Piclist/20250419/JS.png
@@ -62,15 +62,15 @@ careers:
 
 personalities:
   tips: 性格
-  title: 执政官
+  title: 物流师
   color: "#56a178"
-  type: ESFJ-A
-  image: https://www.16personalities.com/static/images/personality-types/avatars/isfj-defender.svg
+  type: ISTJ-A
+  image: https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.svg
   link: https://www.16personalities.com/
   linkText: 16personalities
   typeLink: https://www.16personalities.com/ch/esfj-人格
-  typeName: 执政官
-  myphoto: https://www.16personalities.com/static/images/personality-types/avatars/isfj-defender.svg
+  typeName: 物流师
+  myphoto: https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.svg
 
 motto:
   title: 座右铭
