@@ -108,5 +108,5 @@ theme: solitude
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/xiangleovo/blog-hexo
+  repo: git@github.com:xiangleovo/blog-hexo.git
   branch: gh-pages
