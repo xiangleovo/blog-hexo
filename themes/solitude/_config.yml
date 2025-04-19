@@ -569,7 +569,7 @@ footer:
   # 页脚信息文字
   links:
     - name: RSS
-      url: /atom.xml
+      url: /rss.xml
     - name: License
       url: https://github.com/everfu/hexo-theme-solitude/blob/main/LICENSE
       icon:

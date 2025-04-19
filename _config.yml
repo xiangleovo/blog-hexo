@@ -20,6 +20,12 @@ pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
+# RSS
+feed:
+  type: rss2
+  path: rss.xml
+  limit: 20
+
 # Directory
 source_dir: source
 public_dir: public
