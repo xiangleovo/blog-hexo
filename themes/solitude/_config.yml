@@ -769,7 +769,8 @@ extends:
   # 插入到 head
   head:
   #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-
+     - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+     - <script>LA.init({id:"3KXyEuZJTkRINUx8",ck:"3KXyEuZJTkRINUx8"})</script>
   # Insert in body
   # 插入到 body
   body:
