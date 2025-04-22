@@ -325,10 +325,10 @@ post:
     time: 43200000
   footer:
     enable: false
-    desc: # Articles from Ever Fu. / 文章来自 Ever Fu # description
+    desc: Articles from Ever Fu. / 文章来自 Ever Fu # description
     button: # Button
       enable: true
-      name: # Learn more / 了解更多
+      name: Learn more / 了解更多
       url: /about/
 # --------------------------- end ---------------------------
 
@@ -514,7 +514,7 @@ translate:
 # Right-Sidebar
 # 右下角悬停导航栏
 rightside:
-  enable: true
+  enable: false
   percent: false
   hide:
     enable: false
@@ -531,15 +531,15 @@ footer:
   information:
     author: https://image.qqe4.com/Piclist/20250417204903752.jpg # img url / false
     left:
-      Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
-      Mail: mailto:o@everfu.org || far fa-envelope
-      Gishub: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
+       # 名称: 链接 || 图标
+      Mail: mailto:oing@163.com || far fa-envelope
+      Telegram: https://t.me/xiangleovo || fab fa-telegram 
       X: https://twitter.com/xiangleovo || far fa-x
+      Github: https://github.com/xiangleovo || fab fa-github
     right:
-      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-      Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
-      Bilsli: https://space.bilibili.com/1329819902 || fab fa-bilibili
-      Dousin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
+      Weibo: https://weibo.com/u/6109898576 || fab fa-weibo # 名称: 链接 || 图标
+      BiliBili: https://space.bilibili.com/350074299 || fab fa-bilibili
+      Douyin: https://v.douyin.com/POaimYxGBgU/ || fab fa-tiktok
   # 友情链接
   group:
     文库:
@@ -560,9 +560,9 @@ footer:
 
   # 备案
   beian:
-    # - name: 湘公网安备43048102000175号
-    #   icon: https://beian.mps.gov.cn/img/logo01.dd7ff50e.png
-    #   url: https://beian.mps.gov.cn/#/query/webSearch
+    - name: 湘公网安备43048102000175号
+      icon: https://beian.mps.gov.cn/img/logo01.dd7ff50e.png
+      url: https://beian.mps.gov.cn/#/query/webSearch
     - name: 皖ICP备2020017065号-2
       url: https://beian.miit.gov.cn/
 
@@ -577,9 +577,9 @@ footer:
         - fab fa-creative-commons-by
         - fab fa-creative-commons-nc
         - fab fa-creative-commons-nd
-    # - name: boringbay
-    #   url: https://boringbay.com/
-    #   img: https://boringbay.com/api/badge/www.efu.me
+    - name: boringbay
+      url: https://boringbay.com/
+      img: https://boringbay.com/api/badge/www.efu.me
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -604,7 +604,7 @@ meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth
 # Capsule music
 # 音乐胶囊
 capsule:
-  enable: false
+  enable: true
   # 歌单 ID / 单曲 ID
   id: 5144842535
   # 服务商：netease / qq / xiami / kugou / baidu
@@ -655,10 +655,10 @@ lazyload:
 loading:
   # Full screen loading
   # 全屏加载
-  fullpage: false
+  fullpage: true
   # Loading icon, default is siteicon
   # 加载图标，不写默认siteicon
-  favicon: /img/favicon.png
+  favicon: https://image.qqe4.com/Piclist/20250417204903752.jpg
   # Pace loading
   # Pace 加载
   pace: true
@@ -894,7 +894,7 @@ search:
 # Music Page
 # 音乐馆
 music:
-  enable: false
+  enable: true
   # 歌单 ID / 单曲 ID
   id: 5144842535
   # 服务商：netease / qq / xiami / kugou / baidu
@@ -925,7 +925,7 @@ envelope:
 # Brevity Page
 # 即可短文
 brevity:
-  enable: false
+  enable: true
   home_mini: false
   music: false
   page: /essay/
