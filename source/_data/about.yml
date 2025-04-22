@@ -30,25 +30,25 @@ skills: # 根据需求添加
   subtitle: 开启创造力
   tags:
     - title: HTML
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#e9572b"
     - title: Javascript
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419/JS.png
       color: "#f7cb4f"
     - title: Kotlin
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419/kotlin-logo.svg
       color: "#ffffff"
     - title: WebPack
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419/webpack.png
       color: "#2e3a41"
     - title: Git
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419/git.png
       color: "#df5b40"
     - title: Docker
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419181221897.png
       color: "#57b6e6"
     - title: Visual Studio
-      icon: https://image.qqe4.com/Piclist/20250419181221897.png
+      img: https://image.qqe4.com/Piclist/20250419/vs-logo.svg
       color: "#ffffff"
 
 careers:
@@ -63,7 +63,7 @@ careers:
 personalities:
   tips: 性格
   title: 物流师
-  color: "#56a178"
+  color: "#7ec9cc"
   type: ISTJ-A
   image: https://image.qqe4.com/Piclist/20250419185435252.svg
   link: https://www.16personalities.com/
