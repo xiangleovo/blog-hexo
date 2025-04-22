@@ -110,3 +110,7 @@ deploy:
   type: git
   repo: git@github.com:xiangleovo/blog-hexo.git
   branch: gh-pages
+  
+# 用户选择任何文字
+copy:
+  enable: true
