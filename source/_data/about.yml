@@ -58,7 +58,7 @@ careers:
     - school: 软件工程
       major: 学习
       color: "#357ef5"
-  image: https://7.isyangs.cn/1/65eb2d10ba24d-1.png
+  image: https://image.qqe4.com/Piclist/20250423222603133.png
 
 personalities:
   tips: 性格
@@ -70,8 +70,7 @@ personalities:
   linkText: 16personalities
   typeLink: https://www.16personalities.com/ch/esfj-人格
   typeName: 物流师
-  myphoto: https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.svg
-
+  myphoto: https://image.qqe4.com/Piclist/20250423220814984.png
 motto:
   title: 座右铭
   prefix: 热爱生活，
@@ -102,23 +101,23 @@ likes:
   - type: "comic"
     tips: 爱好番剧 # 右上角提示
     title: 追番 # 标题
-    subtips: "科幻、动漫、喜剧" # 左下小字，可不要
+    subtips: "悬疑、动漫、经典" # 左下小字，可不要
     list: # 最好就是五个或以上，相信你们肯定没那么少的。
-      - name: 你的名字 # 动漫或影视名
-        href: https://movie.douban.com/subject/26683290/ # B站或豆瓣某个位置
-        cover: https://images.418121.xyz/file/blog/covers/p2910701461.webp  # 封面图
-      - name: 四月是你的谎言
-        href: https://www.bilibili.com/bangumi/media/md1699
-        cover: https://images.418121.xyz/file/blog/covers/p2232343678.webp
-      - name: 流浪地球2
-        href: https://movie.douban.com/subject/35267208/
-        cover: https://images.418121.xyz/file/blog/covers/p2886653882.webp
-      - name: 花束般的恋爱
-        href: https://movie.douban.com/subject/34874432/
-        cover: https://images.418121.xyz/file/blog/covers/p2868462052.webp
-      - name: 天气之子
-        href: https://movie.douban.com/subject/30402296/
-        cover: https://images.418121.xyz/file/blog/covers/p2558022335.webp
+      - name: 斗破苍穹 # 动漫或影视名
+        href: https://movie.douban.com/subject/36890032/ # B站或豆瓣某个位置
+        cover: https://image.qqe4.com/Piclist/20250423222319113.webp # 封面图
+      - name: 棋士
+        href: https://movie.douban.com/subject/36449461/
+        cover: https://image.qqe4.com/Piclist/20250423222319115.webp
+      - name: 乌云之上
+        href: https://movie.douban.com/subject/36250591/
+        cover: https://image.qqe4.com/Piclist/20250423222319111.webp
+      - name: 哪吒之魔童闹海
+        href: https://movie.douban.com/subject/34780991/
+        cover: https://image.qqe4.com/Piclist/20250423222319114.webp
+      - name: 繁花
+        href: https://movie.douban.com/subject/34874646
+        cover: https://image.qqe4.com/Piclist/20250423222319112.webp
     button: true # false 可以关闭右边按钮
     button_link: "/pyq/"  # 跳转路径
     button_text: "观看记录"   # 按钮文字
@@ -128,7 +127,7 @@ likes:
   #   title: 数理化
   #   subtips: 理工男
   - type: like-music
-    bg: https://7.isyangs.cn/1/65eb2e5f85132-1.png
+    bg: https://image.qqe4.com/Piclist/20250423215439895.jpg
     tips: 音乐偏好
     title: 民谣、古典、轻音乐
     subtips: 跟 OvO 一起欣赏更多音乐
@@ -137,7 +136,7 @@ likes:
     button_link: /music/
 
 tj: # 统计
-  provider: # 值为 51la（51la网站统计）或 baidu（百度统计）
+  provider: 51la # 值为 51la（51la网站统计）或 baidu（百度统计）
   url: https://v6-widget.51.la/v6/3KXyEuZJTkRINUx8/quote.js # 需要到51la官网注册自行获取 or 自行搭建 Heo 的 百度统计项目，填写访问地址即可
   img: https://image.qqe4.com/Piclist/20250419221659339.jpg # 背景
 

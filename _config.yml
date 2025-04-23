@@ -14,7 +14,7 @@ timezone: Asia/Shanghai # 时区（请自行查询）
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.qqe4.com/
-permalink: :year/:month/:day/:title/
+permalink: /posts/:abbrlink.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -25,6 +25,14 @@ feed:
   type: rss2
   path: rss.xml
   limit: 20
+
+#abbrlink 数字短链接
+abbrlink:
+  alg: crc32        # 可选：crc32 / md5 / random（你想随机就用 random）
+  rep: dec          # dec 表示使用纯数字，hex 是十六进制
+  drafts: false     # 是否处理草稿
+  force: false      # 如果已生成过，就不会覆盖
+  auto_category: false # 自动生成目录（不建议开）
 
 # Directory
 source_dir: source

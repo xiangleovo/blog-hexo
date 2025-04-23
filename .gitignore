@@ -12,3 +12,6 @@ Thumbs.db
 
 # 忽略 Hexo 生成的公共文件（如果不需要上传）
 public/
+
+# 忽略 eploy_git
+.deploy_git/

@@ -21,7 +21,7 @@ site:
   name:
     class: text # text / i_class / img
     custom: OvO # Solitude / fas fa-ghost / /img/pwa/favicon.ico
-  icon: /img/pwa/favicon.png # Site icon / 网站图标
+  icon: https://image.qqe4.com/Piclist/20250417204903752.jpg # Site icon / 网站图标
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -247,7 +247,7 @@ post:
     # 版权
     copyright:
       enable: true
-      author: /img/logo.png # url
+      author: https://image.qqe4.com/Piclist/20250417204903752.jpg # url
       # License
       # 许可证
       license: CC BY-NC-SA 4.0
@@ -577,9 +577,9 @@ footer:
         - fab fa-creative-commons-by
         - fab fa-creative-commons-nc
         - fab fa-creative-commons-nd
-    - name: boringbay
-      url: https://boringbay.com/
-      img: https://boringbay.com/api/badge/www.efu.me
+    # - name: boringbay
+    #   url: https://boringbay.com/
+    #   img: https://boringbay.com/api/badge/www.efu.me
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

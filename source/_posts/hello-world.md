@@ -1,6 +1,7 @@
 ---
 title: Hello World
-cover: https://images.418121.xyz/file/blog/covers/p2558022335.webp
+cover: 'https://images.418121.xyz/file/blog/covers/p2558022335.webp'
+abbrlink: 16108
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
