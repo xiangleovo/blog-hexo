@@ -1,7 +1,7 @@
 - class_name: 生产力
   description: 提升自己生产效率的硬件设备
   equipment_list:
-    - name: 群晖 DS920+
+    - name: iphone 13 Pro
       specification: 性价比超高
       description: 很棒的网络存储解决方案以及流媒体传输服务器
       image: https://7.isyangs.cn/1/65eb3d5f8057b-1.png

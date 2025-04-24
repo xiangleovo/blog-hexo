@@ -28,11 +28,11 @@ feed:
 
 #abbrlink 数字短链接
 abbrlink:
-  alg: crc32        # 可选：crc32 / md5 / random（你想随机就用 random）
-  rep: dec          # dec 表示使用纯数字，hex 是十六进制
-  drafts: false     # 是否处理草稿
-  force: false      # 如果已生成过，就不会覆盖
-  auto_category: false # 自动生成目录（不建议开）
+  alg: crc32       # 使用随机算法
+  rep: hex           # 生成纯数字形式的短链接，若要十六进制则可以使用 hex
+  drafts: false      # 是否处理草稿
+  force: true     # 如果已生成过，就不会覆盖
+  length: 5          # 固定长度为 5 位数字
 
 # Directory
 source_dir: source
