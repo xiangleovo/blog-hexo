@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术随笔
 cover: https://image.qqe4.com/Piclist/20250425113029463.png
+abbrlink: b0a3f1e2
 ---
 
 在开始写博客之前，我纠结了很久。并不是因为不知道要写什么，而是太在意“要写在哪里”。
