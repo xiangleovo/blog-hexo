@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>为什么我在众多博客系统中选择了 Hexo | OvO</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="https://image.qqe4.com/Piclist/20250417204903752.jpg"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=3.0.19"><!-- inject head--><link rel="canonical" href="https://www.qqe4.com/posts/undefined.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="在开始写博客之前，我纠结了很久。并不是因为不知道要写什么，而是太在意“要写在哪里”。 这听起来或许有点做作。毕竟写作的本质，是内容而不是容器。但对于我来说，博客不只是写下当下的碎片，它是自我构建的延伸，是我在网络空间中，唯一能全然掌控、任意定义的那块私有领地。正因为如此，承载它的系统不该是随便选一个"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="OvO"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="https://image.qqe4.com/Piclist/20250417204903752.jpg"><link rel="apple-touch-icon" href="https://image.qqe4.com/Piclist/20250417204903752.jpg" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.19' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3KXyEuZJTkRINUx8",ck:"3KXyEuZJTkRINUx8"})</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2025-04-17 00:00:00',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","barrage":{"title":"热评"}},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息🌙",
+            goodnight: "晚安 😴",
+        },
+        witty_words: ["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙"],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {"avatar":"https://gravatar.com/avatar","commentBarrage":true},
+    lightbox: 'null',
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"},"translate":true,"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="OvO" type="application/rss+xml">
+</head><body id="body"><!-- universe--><!-- background img--><!-- loading--><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="https://image.qqe4.com/Piclist/20250417204903752.jpg" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论</div></div><div class="console_recentcomments"><script pjax>(async () => {
+    document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = utils.saveToLocal.get('twikoo-recent-comments-console')
+    if (cache) {
+        setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
+        return
+    }
+    let ls = []
+
+    await fetch('https://tk.qqe4.com/', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = '/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
+                })
+            }
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        utils.saveToLocal.set('twikoo-recent-comments-console', ls, 0.2)
+    });
+
+    function setHtml(el, data) {
+        el.innerHTML = data.length !== 0 ? data.map(i => `
+            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fas fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('') : `暂无评论...`
+        if (typeof utils !== 'undefined') utils.diffDateFormat(document.querySelectorAll('.comment-time'))
+        else {
+            document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+            document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+        }
+    }
+
+    function formatContent(content) {
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+        content = content.replace(/<img.*?>/g, '[图片]');
+        content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+        content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
+        content = content.replace(/<.*?>/g, '');
+        return content
+    }
+})()</script></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%AE%A2/">博客<sup>1</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E8%81%8C%E5%9C%BA/">职场<sup>1</sup></a><a href="/tags/%E6%96%B0%E5%AA%92%E4%BD%93/">新媒体<sup>1</sup></a><a href="/tags/%E8%BF%90%E8%90%A5%E7%BB%8F%E9%AA%8C/">运营经验<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2025/04/"><span class="date">2025/04</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude fas fa-compact-disc"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"><span class="commentBarrage"><i class="solitude fas fa-comment"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qqe4.com" title="OvO"><img class="nolazyload back-menu-item-icon" src="https://image.qqe4.com/Piclist/20250417204903752.jpg" alt="OvO"><span class="back-menu-item-text">OvO</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>我的装备</span></a></li><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-music"></i><span>闲言碎语</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%AE%A2/">博客<sup>1</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E8%81%8C%E5%9C%BA/">职场<sup>1</sup></a><a href="/tags/%E6%96%B0%E5%AA%92%E4%BD%93/">新媒体<sup>1</sup></a><a href="/tags/%E8%BF%90%E8%90%A5%E7%BB%8F%E9%AA%8C/">运营经验<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">2.3k</div></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon solitude fas fa-bars-progress"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qqe4.com" title="OvO"><img class="nolazyload back-menu-item-icon" src="https://image.qqe4.com/Piclist/20250417204903752.jpg" alt="OvO"><span class="back-menu-item-text">OvO</span></a></div></div></div></div><a id="site-name" href="/" title="返回博客主页"><span class="title">OvO</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">为什么我在众多博客系统中选择了 Hexo</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>我的装备</span></a></li><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-music"></i><span>闲言碎语</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fas fa-dice-d6"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://image.qqe4.com/Piclist/20250425113029463.png" alt="为什么我在众多博客系统中选择了 Hexo"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>博客</span></a><a class="post-meta__tags" href="/tags/%E5%86%99%E4%BD%9C/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>写作</span></a><a class="post-meta__tags" href="/tags/Hexo/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>Hexo</span></a></div></div></div></div><h1 class="post-title">为什么我在众多博客系统中选择了 Hexo</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2025-04-21 22:00:00"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2025-04-21T14:00:00.000Z">2025-04-21T14:00:00.000Z</time></span><span class="post-meta-date" title="最后更新于 2025-04-25 11:34:32"><i class="post-meta-icon solitude fas fa-arrows-rotate"></i><time datetime="2025-04-25T03:34:32.810Z">2025-04-25T03:34:32.810Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fas fa-file-word" title="文章字数"></i><span class="word-count">1.2k</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fas fa-clock" title="阅读耗时"></i><span>4 分钟</span></span><span class="post-meta-position" title="作者IP归属地为China"><i class="post-meta-icon solitude fas fa-location-dot"></i><span>China</span></span><span class="post-meta-commentcount" title="评论数" onclick="sco.scrollTo('post-comment')"><i class="solitude fas fa-comment"></i><a href="/posts/undefined.html#post-comment"><span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><p>在开始写博客之前，我纠结了很久。并不是因为不知道要写什么，而是太在意“要写在哪里”。</p>
+<p>这听起来或许有点做作。毕竟写作的本质，是内容而不是容器。但对于我来说，博客不只是写下当下的碎片，它是自我构建的延伸，是我在网络空间中，唯一能全然掌控、任意定义的那块私有领地。正因为如此，承载它的系统不该是随便选一个，而该是一种选择后的共识。</p>
+<h2 id="内容之外的“空间感”"><a href="#内容之外的“空间感”" class="headerlink" title="内容之外的“空间感”"></a>内容之外的“空间感”</h2><p>我最初的尝试是从 WordPress 开始的。它几乎是开源博客的代名词，插件丰富，生态成熟，界面也足够友好。但用了一阵子后，我开始感到一种难以言说的不适。</p>
+<p>它什么都能做，却什么都不轻盈。每次打开后台，我看见的不是写作的欲望，而是一个待打理的系统：更新提醒、插件通知、主题设置……我仿佛成了一个网站管理员，而非一个写作者。</p>
+<p>后来我试过一些更“现代”的替代方案，比如 Ghost，比如 Notion 搭建的博客，也折腾过 Hugo 和 VuePress。它们各自有优点：更快的构建速度、更灵活的主题、更轻便的写作体验。但始终缺少一种感觉：像在一个木质书桌前，打开笔记本写字的那种安静。</p>
+<p>Hexo 给了我这种感觉。</p>
+<p>它没有后台，只有 Markdown 文件。你要写一篇文章，就得打开本地目录，新建一个文件，把标题写上，把时间敲进 front-matter，再落笔正文。它简陋，但干净。你能明显感知到写作这件事是“从你手中发生的”，而不是被什么平台引导着完成。</p>
+<h2 id="所有权与控制感"><a href="#所有权与控制感" class="headerlink" title="所有权与控制感"></a>所有权与控制感</h2><p>我对平台有天然的不信任。</p>
+<p>也许是时代使然，也许是平台变迁过于频繁，我们每一个人都目睹过“今天还在、明天消失”的公共内容宿命。B 站下架视频、知乎封号、豆瓣整改、小红书限流……哪怕不是从事内容创作的人，也多少有些“内容焦虑”在心底发芽。</p>
+<p>我想拥有一个真正属于自己的空间：没有推荐机制干扰、没有广告挤压排版、没有莫名的规则和打压，也不需要考虑 SEO 和标签优化。我只是想写点什么，然后好好保留它。Hexo 让我做到了这一点。</p>
+<p>它构建的是静态页面，没有数据库，不依赖平台。你可以托管在 GitHub、Vercel、Cloudflare Pages 上，甚至某一天你完全离线，也可以把整个网站打包保存，作为自己电脑中的一本“数字日志册”。所有内容都存在本地，所有样式都可控，所有更新都由你决定。</p>
+<h2 id="折腾也是一种浪漫"><a href="#折腾也是一种浪漫" class="headerlink" title="折腾也是一种浪漫"></a>折腾也是一种浪漫</h2><p>Hexo 并不“即插即用”，它不像 WordPress 那样有一堆模板市场，点几下就能上线一个“好看”的站点。它更像是一块毛坯地，你得自己动手，慢慢搭建你理想中的样子。</p>
+<p>我为此看了很多 GitHub 上的主题项目，调试样式、修改配置、优化部署流程。我不是专业的前端开发者，但 Hexo 的结构足够清晰，配置足够简单，让我在折腾的过程中并不感到焦虑，反而觉得充实。</p>
+<p>当你把第一篇文章从 Markdown 渲染成网页，看到它出现在本地服务器上、出现在你自己搭建的域名下，那种成就感，比在平台上发布十篇爆款文都更让人安心。</p>
+<p>写博客的初心不是为了“更高的浏览量”，而是为了能留下更完整的痕迹。而这个过程中所“浪费”的时间，其实是一种仪式感的积累。</p>
+<h2 id="在浮躁的网络中留一处净土"><a href="#在浮躁的网络中留一处净土" class="headerlink" title="在浮躁的网络中留一处净土"></a>在浮躁的网络中留一处净土</h2><p>在一个信息被平台切割成“可消费内容”的时代，我越来越不喜欢在热榜里找阅读，在推荐里找兴趣。</p>
+<p>我想保留一块地方，不打算“取悦谁”，也不需要“表现什么”，只是写点自己愿意保留下来的思考。</p>
+<p>Hexo 给了我这个自由。</p>
+<p>不被追踪、不看数据、不比点赞。它安静，它不打扰，它只是存在，像一本你写了很多页的笔记本，等你打开，继续写下去。</p>
+<hr>
+<p>这就是我选择 Hexo 的理由。</p>
+<p>它不是最潮的，也不是最快的，更不是最省事的，但它是最像“写作”本身的。它让我觉得，不用成为一个内容创作者，不用追着趋势跑，也可以写点东西，慢慢地写，一直写下去。</p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="https://image.qqe4.com/Piclist/20250417204903752.jpg"></div><div class="post-copyright__author_name">OvO</div><div class="post-copyright__author_desc">热爱生活，分享科技</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div><div class="post-reward"><div class="reward-button" title="赞赏作者" onclick="AddRewardMask()"><i class="solitude fas fa-heart"></i>赞赏作者</div><div class="reward-main"><ul class="reward-all"><span class="reward-title">感谢您的赞赏</span><ul class="reward-group"><li class="reward-item"><a target="_blank" rel="noopener" href="https://github.com/sponsors/everfu"><img class="post-qr-code-img nolazyload" src="https://s3.qjqq.cn/47/661ba900c4bc1.webp!color" alt="Github Sponsor" style="border-color: var(--efu-black)"></a><div class="post-qr-code-desc">Github Sponsor</div></li></ul><a class="reward-main-btn" href="/about/"><div class="reward-text">赞赏名单</div><div class="reward-dec">由于您的支持，我才能够实现写作的价值。</div></a></ul></div></div><script>function RemoveRewardMask() {
+    let rewardMainElements = document.querySelectorAll(".reward-main");
+    let quitBoxElement = document.querySelector("#quit-box");
+
+    rewardMainElements.forEach(element => {
+        element.style.display = "none";
+    });
+
+    if (quitBoxElement) {
+        quitBoxElement.style.display = "none";
+    }
+}
+
+function AddRewardMask() {
+    let rewardMainElements = document.querySelectorAll(".reward-main");
+    let quitBoxElement = document.querySelector("#quit-box");
+
+    rewardMainElements.forEach(element => {
+        element.style.display = "flex";
+    });
+
+    if (quitBoxElement) {
+        quitBoxElement.style.display = "flex";
+    }
+}</script><div class="reward-link mode"><a class="reward-link-button" href="/rss.xml"><i class="solitude fas fa-seedling"></i>订阅</a></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html&amp;title=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo&amp;desc=undefined&amp;summary=undefined&amp;site=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo&amp;pics=https%3A%2F%2Fimage.qqe4.com%2FPiclist%2F20250425113029463.png" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="noopener" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html&amp;title=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo&amp;pic=https%3A%2F%2Fimage.qqe4.com%2FPiclist%2F20250425113029463.png" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html&amp;text=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo" title="分享到Twitter"><i class="solitude fab fa-twitter"></i></a><a class="social-share-ico icon-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html" title="分享到Facebook"><i class="solitude fab fa-facebook"></i></a><a class="social-share-ico icon-telegram" target="_blank" rel="noopener" href="https://t.me/share/url?url=https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html&amp;text=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo" title="分享到Telegram"><i class="solitude fab fa-telegram"></i></a><a class="social-share-ico icon-whatsapp" target="_blank" rel="noopener" href="https://api.whatsapp.com/send?text=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html" title="分享到WhatsApp"><i class="solitude fab fa-whatsapp"></i></a><a class="social-share-ico icon-linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.qqe4.com%2Fposts%2Fundefined.html&amp;title=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo&amp;summary=undefined&amp;source=%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E4%BC%97%E5%A4%9A%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%AD%E9%80%89%E6%8B%A9%E4%BA%86%20Hexo" title="分享到LinkedIn"><i class="solitude fab fa-linkedin"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;https://www.qqe4.com/posts/undefined.html&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div><div class="social-share-ico icon-qrcode" title="使用手机扫码阅读这篇文章"><i class="solitude fas fa-qrcode"></i><div class="share-main"><div class="share-main-all"><div id="qrcode"></div><div class="reward-dec">使用手机扫码阅读这篇文章</div></div></div><script pjax>typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), {
+    text: 'https://www.qqe4.com/posts/undefined.html',
+    correctLevel : QRCode.CorrectLevel.L
+});
+window.addEventListener('DOMContentLoaded', () => {
+    new QRCode(document.getElementById("qrcode"), {
+        text: 'https://www.qqe4.com/posts/undefined.html',
+        correctLevel : QRCode.CorrectLevel.L
+    });
+});
+</script></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">OvO</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>博客<span class="tagsPageCount">1</span></span></a><a class="post-meta__tags" href="/tags/%E5%86%99%E4%BD%9C/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>写作<span class="tagsPageCount">1</span></span></a><a class="post-meta__tags" href="/tags/Hexo/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Hexo<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/5e32e1df.html"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">新媒体运营：我眼中的现实与迷茫</div></div></a></div></nav><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span><span class="count"> (<span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span>)</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src= "" data-lazy-src="https://image.qqe4.com/Piclist/20250417204903752.jpg"></div><div class="description">这里有关于产品、开发、设计相关的问题和看法，还有文章翻译和分享。<br><br>相信你可以在这里找到对你有用的知识和教程。</div><div class="bottom-group"><span class="left"><div class="name">OvO</div><div class="desc">热爱生活，分享科技。</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/xiangleovo" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/350074299" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E4%B9%8B%E5%A4%96%E7%9A%84%E2%80%9C%E7%A9%BA%E9%97%B4%E6%84%9F%E2%80%9D"><span class="toc-text">内容之外的“空间感”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%9D%83%E4%B8%8E%E6%8E%A7%E5%88%B6%E6%84%9F"><span class="toc-text">所有权与控制感</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E8%85%BE%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E6%B5%AA%E6%BC%AB"><span class="toc-text">折腾也是一种浪漫</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%B5%AE%E8%BA%81%E7%9A%84%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%95%99%E4%B8%80%E5%A4%84%E5%87%80%E5%9C%9F"><span class="toc-text">在浮躁的网络中留一处净土</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/posts/5e32e1df.html" title="新媒体运营：我眼中的现实与迷茫"><div class="thumbnail"><img alt="新媒体运营：我眼中的现实与迷茫" src= "" data-lazy-src="https://image.qqe4.com/Piclist/20250425112839724.png"></div><div class="content"><span class="title" href="/posts/5e32e1df.html" title="新媒体运营：我眼中的现实与迷茫">新媒体运营：我眼中的现实与迷茫</span><span class="categories" href="/posts/5e32e1df.html">职业观察</span></div></a><a class="aside-list-item" href="/posts/undefined.html" title="为什么我在众多博客系统中选择了 Hexo"><div class="thumbnail"><img alt="为什么我在众多博客系统中选择了 Hexo" src= "" data-lazy-src="https://image.qqe4.com/Piclist/20250425113029463.png"></div><div class="content"><span class="title" href="/posts/undefined.html" title="为什么我在众多博客系统中选择了 Hexo">为什么我在众多博客系统中选择了 Hexo</span><span class="categories" href="/posts/undefined.html">技术随笔</span></div></a></div></div><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%AE%A2/">博客<sup>1</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E8%81%8C%E5%9C%BA/">职场<sup>1</sup></a><a href="/tags/%E6%96%B0%E5%AA%92%E4%BD%93/">新媒体<sup>1</sup></a><a href="/tags/%E8%BF%90%E8%90%A5%E7%BB%8F%E9%AA%8C/">运营经验<sup>1</sup></a></div><style>.card-tag-cloud::after {
+    display: none !important;
+}</style><hr><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章总数 :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">建站天数 :</div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="item-name">最后更新 :</div><time class="item-count" datetime="2025-04-25T03:47:58.000Z"></time></div><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">2.3k</div></div></div></div><div class="card-widget card-recent-comment"><div class="item-headline"><i class="solitude fas fa-comment"></i><span>最近评论</span></div><div class="aside-list"></div><script>(() => {
+    const changeContent = (content) => {
+        if (!content) return '';
+        const replacements = [
+            {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[图片]'},
+            {
+                regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi,
+                replacement: '[链接]'
+            },
+            {regex: /<pre><code>.*?<\/pre>/gi, replacement: '[代码]'},
+            {regex: /<[^>]+>/g, replacement: ''}
+        ]
+        content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content)
+        return content.length > 150 ? `${content.substring(0, 100)}...` : content
+    }
+    const generateHtml = (array) => {
+        const html = array.map(item => `
+            <div class='aside-list-item'>
+                <div class='thumbnail'>
+                    <img src= "" data-lazy-src='${item.avatar}' alt='${item.nick}'>
+                </div>
+                <div class='content'>
+                    <div class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</div>
+                    <time class="datetime" datetime="${item.date}"></time>
+                </div>
+            </div>
+        `).join('')
+        document.querySelector('.card-recent-comment .aside-list').innerHTML = array.length ? html : "没有评论"
+        window.lazyLoadInstance?.update()
+        window.pjax?.refresh()
+        sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
+    }
+    const getComment = async () => {
+        const runTwikoo = () => {
+            twikoo.getRecentComments({
+                envId: 'https://tk.qqe4.com/',
+                region: '',
+                pageSize: 5,
+                includeReply: true
+            }).then(res => {
+                const twikooArray = res.map(e => ({
+                    content: changeContent(e.comment),
+                    avatar: e.avatar,
+                    nick: e.nick,
+                    url: `${e.url}#${e.id}`,
+                    date: new Date(e.created).toString()
+                })).slice(0, 6)
+                utils.saveToLocal.set('twikoo-newest-comment', twikooArray, 0.5)
+                generateHtml(twikooArray)
+            }).catch((err) => {
+                console.error(err);
+                document.querySelector('.card-recent-comment .aside-list').textContent = "无法获取评论，请确认相关配置是否正确。"
+            })
+        }
+        if (typeof twikoo === 'object') {
+            runTwikoo()
+        } else {
+            utils.getScript('https://fastly.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js').then(runTwikoo)
+        }
+    }
+    const newestCommentInit = () => {
+        if (!document.querySelector('.card-recent-comment')) return
+        const data = utils.saveToLocal.get('twikoo-newest-comment')
+        data ? generateHtml(data) : getComment()
+    }
+    window.addEventListener('DOMContentLoaded', newestCommentInit, false)
+    window.addEventListener('pjax:complete', newestCommentInit, false);
+})()</script></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" href="mailto:oing@163.com" title="Mail"><i class="solitude  far fa-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://t.me/xiangleovo" title="Telegram"><i class="solitude  fab fa-telegram"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://twitter.com/xiangleovo" title="X"><i class="solitude  far fa-x"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/xiangleovo" title="Github"><i class="solitude  fab fa-github"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src= "" data-lazy-src="https://image.qqe4.com/Piclist/20250417204903752.jpg" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://wpa.qq.com/msgrd?v=3&amp;uin=99382121&amp;site=qq&amp;menu=yes" title="QQ"><i class="solitude  fab fa-qq"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6109898576" title="Weibo"><i class="solitude  fab fa-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/350074299" title="BiliBili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://v.douyin.com/POaimYxGBgU/" title="Douyin"><i class="solitude  fab fa-tiktok"></i></a></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2025 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src= "" data-lazy-src="https://image.qqe4.com/Piclist/20250417204903752.jpg">OvO</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="皖ICP备2020017065号-2"><img class="beian-icon" src= "" data-lazy-src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" alt="皖ICP备2020017065号-2"><span class="beian-name">皖ICP备2020017065号-2</span></a></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="/rss.xml" alt="RSS">RSS</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude/blob/main/LICENSE" alt="License"><i class="solitude fas fa-copyright"></i><i class="solitude fab fa-creative-commons-by"></i><i class="solitude fab fa-creative-commons-nc"></i><i class="solitude fab fa-creative-commons-nd"></i></a></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fas fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fas fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fas fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fas fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude far fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fas fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fas fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude fas fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude fas fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude fas fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude fas fa-clone"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/categories/')||rm.hideRightMenu()"><i class="solitude fas fa-clone"></i><span>全部分类</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/tags/')||rm.hideRightMenu()"><i class="solitude fas fa-tags"></i><span>全部标签</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fas fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=3.0.19"></script><script src="/js/main.js?v=3.0.19"></script><script src="/js/third_party/waterfall.min.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="https://fastly.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script><script src="/js/tw_cn.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script src="https://fastly.jsdelivr.net/npm/colorthief@2.6.0/dist/color-thief.min.js"></script><script src="/js/covercolor/local.js?v=3.0.19"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><script src="/js/right_menu.js?v=3.0.19"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://tk.qqe4.com/',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://tk.qqe4.com/',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+         && getCount()
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://fastly.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || false) {
+        if (false) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script><script>async function barrageTwikoo() {
+    await fetch("https://tk.qqe4.com/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+        const data = await res.json();
+        const init = () => {
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=3.0.19').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- music--><div class="needEndHide" id="nav-music"><div id="nav-music-hoverTips" onclick="sco.musicToggle()">音乐已暂停</div><meting-js id="5144842535" server="netease" type="playlist" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume="0.8"></meting-js></div></body></html>
+        <script>
+            const posts = ["/posts/5e32e1df.html","/posts/undefined.html"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
